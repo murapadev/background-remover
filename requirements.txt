@@ -1,0 +1,6 @@
+transformers
+torch
+Pillow
+accelerate
+scikit-image
+torchvision
