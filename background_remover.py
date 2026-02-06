@@ -23,10 +23,10 @@ def remove_background(input_path, output_path, model_name="briaai/RMBG-1.4"):
     output_dir.mkdir(exist_ok=True)
 
     # Supported image formats
-    image_extensions = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff'}
+    image_extensions = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.webp'}
 
-    for image_file in input_dir.iterdir():
-        if image_file.suffix.lower() in image_extensions:
+    for image_file in input_dir.rglob('*'):
+        if image_file.is_file() and image_file.suffix.lower() in image_extensions:
             print(f"Processing {image_file.name}...")
             try:
                 # Load image
@@ -35,9 +35,15 @@ def remove_background(input_path, output_path, model_name="briaai/RMBG-1.4"):
                 # Remove background
                 result = pipe(image)
 
+                # Compute relative path
+                relative_path = image_file.relative_to(input_dir)
+                output_file = output_dir / relative_path.with_name(f"{relative_path.stem}_no_bg.png")
+                
+                # Create output directory if it doesn't exist
+                output_file.parent.mkdir(parents=True, exist_ok=True)
+                
                 # Save the result (assuming the pipeline returns a PIL Image)
-                output_file = output_dir / f"{image_file.stem}_no_bg.png"
-                result.save(output_file)
+                result.save(output_file)  # type: ignore
                 print(f"Saved {output_file}")
 
             except Exception as e:
