@@ -1,70 +1,53 @@
-# Background Remover
+# 🖼️ Background Remover
 
-A Python script that uses AI to remove backgrounds from images in a folder.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Python](https://img.shields.io/badge/python-3.8+-blue)
 
-## Author
+> Python script that uses AI to remove backgrounds from images in a folder.
 
-Pablo R (murapadev)
+---
 
-## Features
+## 📋 Tabla de contenidos
 
-- Loads a pre-trained AI model from Hugging Face
-- Processes all images in an input folder
-- Saves background-removed images to an output folder
-- Supports common image formats (JPG, PNG, BMP, TIFF)
+- [Características](#-características)
+- [Instalación](#-instalación)
+- [Uso](#-uso)
+- [Contribución](#-contribución)
+- [Licencia](#-licencia)
 
-## Requirements
+## ✨ Características
 
-- Python 3.8+
-- Dependencies listed in `requirements.txt`
+- 🤖 **AI-powered**: Usa modelos de Hugging Face
+- 📁 **Procesamiento por lotes**: Procesa todas las imágenes de una carpeta
+- 🖼️ **Múltiples formatos**: JPG, PNG, BMP, TIFF
+- ⚡ **Automático**:男女 No need for manual intervention
 
-## Installation
+## 🛠️ Instalación
 
-1. Clone this repository:
+```bash
+# Clonar
+git clone https://github.com/murapadev/background-remover.git
+cd background-remover
 
-   ```bash
-   git clone https://github.com/murapadev/background-remover.git
-   cd background-remover
-   ```
+# Instalar dependencias
+pip install -r requirements.txt
+```
 
-2. Create a virtual environment:
+## 🚀 Uso
 
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+```bash
+# Ejecutar
+python background_remover.py --input ./images --output ./output
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 📝 Contribución
 
-## Usage
+Las contribuciones son bienvenidas. Abre un issue o pull request.
 
-1. Place your images in the `input` folder.
+## 📄 Licencia
 
-2. Run the script:
+Este proyecto está licenciado bajo los términos de la licencia MIT.
 
-   ```bash
-   python background_remover.py
-   ```
+---
 
-   Or specify custom folders:
-
-   ```bash
-   python background_remover.py --input /path/to/input --output /path/to/output
-   ```
-
-3. Processed images will be saved in the `output` folder with "\_no_bg" suffix.
-
-## Model
-
-Uses the RMBG-1.4 model from BRIA AI on Hugging Face, which is one of the best for background removal.
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Contributing
-
-Feel free to open issues or submit pull requests.
+*Hecho con ❤️ por [murapadev](https://github.com/murapadev)*
