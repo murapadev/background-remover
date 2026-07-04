@@ -1,6 +1,6 @@
-transformers
-torch
-Pillow
-accelerate
-scikit-image
-torchvision
+transformers>=4.41,<5
+torch>=2.2
+Pillow>=10.0
+accelerate>=0.30
+scikit-image>=0.22
+torchvision>=0.17
