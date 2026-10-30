@@ -111,3 +111,5 @@ dmypy.json
 # Input/Output folders
 input/
 output/
+# Tooling
+.ruff_cache/

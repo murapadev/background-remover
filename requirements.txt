@@ -1,6 +1,4 @@
-transformers>=4.41,<5
+transformers>=4.54,<5  # 5.x fails to load EoMT through pipeline() (checked up to 5.22.1)
 torch>=2.2
-Pillow>=10.0
-accelerate>=0.30
-scikit-image>=0.22
 torchvision>=0.17
+Pillow>=10.0

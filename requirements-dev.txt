@@ -1,0 +1,4 @@
+# Tests mock the model pipeline, so CI does not need torch/transformers.
+Pillow>=10.0
+pytest>=8.0
+ruff>=0.6
